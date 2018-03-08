@@ -13,22 +13,17 @@
     var tela = document.querySelector('canvas');
     var pincel = tela.getContext('2d');
 
-    pincel.fillStyle = 'grey';
+    pincel.fillStyle = 'lightgrey';
     pincel.fillRect(0, 0, 600, 400);
 
-    function printCircle(evento){
-
-        var x = evento.pageX - tela.offsetLeft;
-        var y = evento.pageY - tela.offsetTop;
+    function printCircle(x, y, raio){
         pincel.fillStyle = 'blue';
         pincel.beginPath();
-        pincel.arc(x, y, 10, 0, 2 * 3.14);
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
         pincel.fill();
-        console.log(x + ',' + y);
-        
     }
 
-    tela.onclick = printCircle;
+    printCircle(20, 20, 10);
 
 </script>
 
